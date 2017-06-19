@@ -4,8 +4,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 import routes from './routes/'
-
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 Vue.use(VueRouter)
+Vue.use(ElementUI)
 
 const router = new VueRouter({routes})
 

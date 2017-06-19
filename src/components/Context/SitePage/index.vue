@@ -97,10 +97,10 @@ export default {
               case 0:
                 item.status='待审核'
                 break;
-             case 1:
+              case 1:
                 item.status='待接入'
                 break;
-            case 2:
+              case 2:
                 item.status='正常'
                 break;
               default:

@@ -2,7 +2,7 @@
 <div>
   <div class="row">
     <div class="col-md-12">
-        <h4 class="page-head-line">Home</h4>
+        <h4 class="page-head-line">主页</h4>
     </div>
   </div>
   <div class="row">
@@ -10,42 +10,42 @@
       <div class="dashboard-div-wrapper bk-clr-one">
            <i  class="fa dashboard-div-icon" >{{userCount}}</i>
            <div class="block-line-one">用户数</div>
-           <h5 class="btn more-btn" @click.prevent="jumpTo('/user')">更多 > </h5>
+           <h5 class="btn more-btn" @click.prevent="jumpTo('/user')">用户管理 > </h5>
       </div>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-6">
       <div class="dashboard-div-wrapper bk-clr-two">
            <i  class="fa dashboard-div-icon" >{{siteCount}}</i>
            <div class="block-line-two">域名数</div>
-           <h5 class="btn more-btn" @click.prevent="jumpTo('/site')">更多 > </h5>
+           <h5 class="btn more-btn" @click.prevent="jumpTo('/site')">域名管理 > </h5>
       </div>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-6">
       <div class="dashboard-div-wrapper bk-clr-three">
            <i  class="fa dashboard-div-icon" >{{dynamicCount}}</i>
            <div class="block-line-three">高防节点数</div>
-           <h5 class="btn more-btn" @click.prevent="jumpTo('/node')">更多 > </h5>
+           <h5 class="btn more-btn" @click.prevent="jumpTo('/node')">高防节点管理 > </h5>
       </div>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-6">
       <div class="dashboard-div-wrapper bk-clr-four">
            <i  class="fa dashboard-div-icon" >{{siteCount}}</i>
            <div class="block-line-four">DNS服务器数</div>
-           <h5 class="btn more-btn" @click.prevent="jumpTo('/node')">更多 > </h5>
+           <h5 class="btn more-btn" @click.prevent="jumpTo('/node')">DNS服务器管理 > </h5>
       </div>
     </div>
     <div class="col-md-4 col-sm-4 col-xs-6">
       <div class="dashboard-div-wrapper bk-clr-five">
             <i  class="fa dashboard-div-icon" >{{staticCount}}</i>
             <div class="block-line-four">清洗设备数目</div>
-            <h5 class="btn more-btn" @click.prevent="jumpTo('/site')">更多 > </h5>
+            <h5 class="btn more-btn" @click.prevent="jumpTo('/site')">清洗设备管理 > </h5>
       </div>
     </div> 
     <div class="col-md-4 col-sm-4 col-xs-6">
       <div class="dashboard-div-wrapper bk-clr-six">
             <i  class="fa dashboard-div-icon" >{{staticCount}}</i>
             <div class="block-line-four">报表统计</div>
-            <h5 class="btn more-btn" @click.prevent="jumpTo('/site')">更多 > </h5>
+            <h5 class="btn more-btn" @click.prevent="jumpTo('/site')">报表管理 > </h5>
       </div>
     </div> 
   </div>

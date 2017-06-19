@@ -2,7 +2,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="text-align: center;">
                 &copy; 2017 VEDA | By : <a href="http://test.veda.com/" target="_blank">zhengzhou research and development center</a>
             </div>
         </div>
