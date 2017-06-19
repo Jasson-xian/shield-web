@@ -49,14 +49,14 @@
                   </td>
                 </tr>
               </thead>
-              <tbody class="error-tbody" v-if=" status == 'error' ? true : flase ">
+              <tbody class="error-tbody" v-if=" status == 'error' ? true : false ">
                 <tr style='text-align:left'>
                   <td colspan='3'>
                     <b>Search For " {{domain}} " No data !</b>
                   </td>
                 </tr>
               </tbody>
-              <tbody class="real-tbody" v-if=" status == 'success' ? true : flase ">
+              <tbody class="real-tbody" v-if=" status == 'success' ? true : false ">
                 <tr v-for="log in logs">
                   <td >
                     {{ log.domain }}
@@ -79,7 +79,7 @@
               <button type="button" v-if=" page > 1 ? true : false " v-on:click="onChangePage('prev')" class="btn btn-sm btn-danger ">Prev</button>
               <button type="button" v-if=" pages <= 1 || pages == page ? false : true " v-on:click="onChangePage('next')" class="btn btn-sm btn-danger ">Next</button>
             </div>
-            <div class="pagejump" v-if=" status == 'success' ? true : flase ">
+            <div class="pagejump" v-if=" status == 'success' ? true : false ">
               <div class="input-group">
                 <input type="number" v-model="pagejump"  class="page-input form-control">
                 <span class="input-group-btn">

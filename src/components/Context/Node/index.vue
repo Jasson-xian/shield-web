@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-md-12">
-          <h4 class="page-head-line">Logs</h4>
+          <h4 class="page-head-line">高防节点</h4>
       </div>
     </div>
     <fluxchart></fluxchart>

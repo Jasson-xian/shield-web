@@ -1,121 +1,126 @@
 <template>
-<div class="table-responsive">
-       <div class="pic_wrap">           
-            <ul  class="pic_wrap_body">
-                <!--网站数据-->
-                <li class="web_data">
-                    <div class="pic_head">
-                        <h4>网站数据</h4>
-                    </div> 
-                     <!--http、https-->
-                    <el-tabs v-if="type!='port'" v-model="now_history" type="card">
-                        <el-tab-pane label="今日网站数据" name="today">
-                            <table>
-                                <tr>
-                                    <td>总请求数</td>
-                                    <td>总流量</td>
-                                    <td>缓存请求次数</td>
-                                </tr>
-                                <tr class="data">
-                                    <td>269</td>
-                                    <td>66.66KB</td>
-                                    <td>5</td>
-                                </tr>
-                            </table>                 
-                        </el-tab-pane>
-                        <el-tab-pane label="历史网站数据" name="history">
-                            <table >
-                                <tr>
-                                    <td>总请求数</td>
-                                    <td>总流量</td>
-                                    <td>缓存请求次数</td>
-                                </tr>
-                                <tr class="data">
-                                    <td>666666</td>
-                                    <td>6666.66KB</td>
-                                    <td>15</td>
-                                </tr>
-                            </table>        
-                        </el-tab-pane>
-                    </el-tabs>
-                    <!--端口-->
-                     <el-tabs v-else  v-model="now_history" type="card">
-                        <el-tab-pane label="今日网站数据" name="today">
-                            <table>
-                                <tr>
-                                    <td>总请求数</td>
-                                    <td>总流量</td>                                
-                                </tr>
-                                <tr class="data">
-                                    <td>269</td>
-                                    <td>66.66KB</td>                                
-                                </tr>
-                            </table>                 
-                        </el-tab-pane>
-                        <el-tab-pane label="历史网站数据" name="history">
-                            <table >
-                                <tr>
-                                    <td>总请求数</td>
-                                    <td>总流量</td>        
-                                </tr>
-                                <tr class="data">
-                                    <td>666666</td>
-                                    <td>6666.66KB</td>
-                                </tr>
-                            </table>        
-                        </el-tab-pane>
-                    </el-tabs>
-                </li>
-                <!--访问概况-->
-                <li class="condition">                
-                    <div class="pic_head">
-                        <h4>网站访问概况</h4>                                             
-                        <el-date-picker 
-                        v-model="visit_time" 
-                        type="daterange" 
+    
+    <div class="pic_wrap table detail">
+        <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2" style="text-align: center">{{ '报表 '+site_domain}}</th>
+            </tr>
+        </thead>  
+        <ul  class="pic_wrap_body">
+            <!--网站数据-->
+            <li class="web_data">
+                <div class="pic_head">
+                    <h4>网站数据</h4>
+                </div> 
+                    <!--http、https-->
+                <el-tabs v-if="type!='port'" v-model="now_history" type="card">
+                    <el-tab-pane label="今日网站数据" name="today">
+                        <table>
+                            <tr>
+                                <td>总请求数</td>
+                                <td>总流量</td>
+                                <td>缓存请求次数</td>
+                            </tr>
+                            <tr class="data">
+                                <td>269</td>
+                                <td>66.66KB</td>
+                                <td>5</td>
+                            </tr>
+                        </table>                 
+                    </el-tab-pane>
+                    <el-tab-pane label="历史网站数据" name="history">
+                        <table >
+                            <tr>
+                                <td>总请求数</td>
+                                <td>总流量</td>
+                                <td>缓存请求次数</td>
+                            </tr>
+                            <tr class="data">
+                                <td>666666</td>
+                                <td>6666.66KB</td>
+                                <td>15</td>
+                            </tr>
+                        </table>        
+                    </el-tab-pane>
+                </el-tabs>
+                <!--端口-->
+                    <el-tabs v-else  v-model="now_history" type="card">
+                    <el-tab-pane label="今日网站数据" name="today">
+                        <table>
+                            <tr>
+                                <td>总请求数</td>
+                                <td>总流量</td>                                
+                            </tr>
+                            <tr class="data">
+                                <td>269</td>
+                                <td>66.66KB</td>                                
+                            </tr>
+                        </table>                 
+                    </el-tab-pane>
+                    <el-tab-pane label="历史网站数据" name="history">
+                        <table >
+                            <tr>
+                                <td>总请求数</td>
+                                <td>总流量</td>        
+                            </tr>
+                            <tr class="data">
+                                <td>666666</td>
+                                <td>6666.66KB</td>
+                            </tr>
+                        </table>        
+                    </el-tab-pane>
+                </el-tabs>
+            </li>
+            <!--访问概况-->
+            <li class="condition">                
+                <div class="pic_head">
+                    <h4>网站访问概况</h4>                                             
+                    <el-date-picker 
+                    v-model="visit_time" 
+                    type="daterange" 
 
-                        align="right"  
-                        placeholder="选择时间范围" 
-                        :picker-options="pickerOptions">
+                    align="right"  
+                    placeholder="选择时间范围" 
+                    :picker-options="pickerOptions">
+                    </el-date-picker>
+                    
+                </div>  
+                <table>
+                    <tr>
+                        <td>时间范围</td>
+                        <td>总请求次数</td>
+                        <td>请求流量</td>
+                        <td>网站浏览人数（IP）</td>
+                    </tr>
+                    <tr  class="data">
+                        <td>{{time_range}}</td>
+                        <td>242526次</td>
+                        <td>5.53M</td>
+                        <td>520</td>
+                    </tr>
+                </table>                 
+                <div id="web_visit"></div> 
+            </li>
+            <!--历史攻击拦截-->
+            <li>
+                    <div class="pic_head">
+                    <h4>历史攻击拦截</h4>
+                    <div class="block">
+                        <el-date-picker
+                            v-model="holdup_time" 
+                            type="daterange" 
+                            align="right" 
+                            placeholder="选择日期范围" 
+                            :picker-options="pickerOptions">
                         </el-date-picker>
-                       
-                    </div>  
-                    <table>
-                        <tr>
-                            <td>时间范围</td>
-                            <td>总请求次数</td>
-                            <td>请求流量</td>
-                            <td>网站浏览人数（IP）</td>
-                        </tr>
-                        <tr  class="data">
-                            <td>{{time_range}}</td>
-                            <td>242526次</td>
-                            <td>5.53M</td>
-                            <td>520</td>
-                        </tr>
-                    </table>                 
-                    <div id="web_visit"></div> 
-                </li>
-                <!--历史攻击拦截-->
-                <li>
-                     <div class="pic_head">
-                        <h4>历史攻击拦截</h4>
-                        <div class="block">
-                            <el-date-picker
-                             v-model="holdup_time" 
-                             type="daterange" 
-                             align="right" 
-                             placeholder="选择日期范围" 
-                             :picker-options="pickerOptions">
-                            </el-date-picker>
-                        </div>
-                    </div>  
-                    <div id="holdup"></div>                             
-                </li>
-
-            </ul>  
-        </div> 
-</div>
+                    </div>
+                </div>  
+                <div id="holdup"></div>                             
+            </li>
+        </ul>  
+        </table>                 
+    </div> 
 </template>
 <script>
 import siteService from 'services/siteService'
@@ -139,6 +144,20 @@ export default {
            
         }
     },
+    mounted(){
+           this.computeTime()
+            this.defaultTime()
+            this.drawWebVisit()
+            this.drawHoldback()
+       },
+    computed:{
+        time_range:function(){
+            let strat_time = new Date(this.visit_time[0]).toLocaleDateString()
+            let end_time = new Date(this.visit_time[1]).toLocaleDateString()
+            let time_range = strat_time +'~'+ end_time
+            return  time_range
+        }
+    },
     methods: {
         loadData () {
             console.log(this.$route)
@@ -146,19 +165,15 @@ export default {
             .then((recvdata) => {
                 if(recvdata.status === 'success') {
                     this.site_domain = recvdata.data.sdomain
-                    // this.days = recvdata.data.stime.days
-                    // this.hours = recvdata.data.stime.hours
-                    // this.mins = recvdata.data.stime.mins
-                    // this.secs = recvdata.data.stime.secs
-                    // this.capacity = recvdata.data.scapacity
-                    // this.sys_domain = recvdata.data.sys_domain
-                    // this.pip = recvdata.data.spip
-                    // this.rip = recvdata.data.srip
-                    // this.status = recvdata.data.slevel == 1 ? "static proxy" : "dynamic proxy"
-                    // this.flux = recvdata.data.straffic
+                    this.port = recvdata.data.port
                 }
             })
         },
+         defaultTime(){
+                const date = new Date()
+                this.visit_time=[date, date]
+                this.holdup_time=[date, date]
+           },
          computeTime(){
                 this.pickerOptions = {
                     shortcuts: [{
@@ -375,18 +390,21 @@ export default {
       display: flex;
       justify-content: center;
       background: #F9F9F9;
+      margin-top: 60px;
   }
   .pic_wrap_body{ 
      width: 100%;
-     padding: 40px;
+     padding:0 40px;
   }
   .pic_wrap_body >li{
        margin-top: 20px;
   }
   h4{
-      font-size: 20px;
+      font-size: 16px;
       height: 36px;
       line-height: 36px;
+      color: #ef2f32;
+      font-weight:600;
   }
   .pic_head{
       display: flex;
@@ -398,39 +416,22 @@ export default {
       width: 100%;
       text-align: center;
   }
-.web_data{
+.detail{
    
     table{
          border: 1px solid #dddddd; 
     }
     tr{
-        border-bottom: none;       
+        border-bottom: none;
+        height: 30px;       
     }
     td{
-        font-size: 14px;
         border-left: 1px dashed #dddddd; 
     }
     .data td{
-        color: #3e6ff8;
-        font-size:28px;
+        color: #4cae4c;;
     }
 
-}
-.condition{
-    table{
-         border: 1px solid #dddddd; 
-    }
-    tr{
-        border-bottom: none;       
-    }
-    td{
-        font-size: 12px;
-        border-left: 1px dashed #dddddd; 
-    }
-    .data td{
-        color: #3e6ff8;
-        font-size:16px;
-    }
 }
 
 #web_visit,#holdup{

@@ -12,16 +12,6 @@ const routes = [
 		component: resolve => require(['components/Context/UserPage/'], resolve)
 	},
 	{
-		path: '/node', 
-		component: resolve => require(['components/Context/NodePage/'], resolve),
-		children: [
-			{
-				path: 'detail/:id',
-				component: resolve => require(['components/Context/NodePage/detail'],resolve)
-			}			
-		]
-	},
-	{
 		path: '/site', 
 		component: resolve => require(['components/Context/SitePage/'], resolve),
 		children: [
@@ -32,8 +22,27 @@ const routes = [
 		]
 	},
 	{
-		path: '/logs', 
-		component: resolve => require(['components/Context/Logs/'], resolve)
+		path: '/dns', 
+		component: resolve => require(['components/Context/DNSPage/'], resolve),
+		children: [
+			{
+				path: 'detail/:id',
+				component: resolve => require(['components/Context/NodePage/detail'],resolve)
+			}			
+		]
+	},
+	
+	{
+		path: '/node', 
+		component: resolve => require(['components/Context/Node/'], resolve)
+	},
+	{
+		path: '/clean', 
+		component: resolve => require(['components/Context/CleanPage/'], resolve)
+	},
+	{
+		path: '/report', 
+		component: resolve => require(['components/Context/ReportPage/'], resolve)
 	},
 	{
 		path: '/profile', 

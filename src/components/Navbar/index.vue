@@ -8,10 +8,10 @@
                           <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'home' || $route.path === '/'}" @click.prevent="jumpTo('/home')">主页</a></li>
                           <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'user'}" @click.prevent="jumpTo('/user')">用户管理</a></li>
                           <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'site'}" @click.prevent="jumpTo('/site')">域名管理</a></li>
-                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'node'}" @click.prevent="jumpTo('/node')">DNS服务器管理</a></li>
-                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'logs'}" @click.prevent="jumpTo('/logs')">高防节点管理</a></li>
-                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'logs'}" @click.prevent="jumpTo('/logs')">清洗设备管理</a></li>
-                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'logs'}" @click.prevent="jumpTo('/logs')">报表管理</a></li>
+                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'dns'}" @click.prevent="jumpTo('/dns')">DNS服务器管理</a></li>
+                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'node'}" @click.prevent="jumpTo('/node')">高防节点管理</a></li>
+                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'clean'}" @click.prevent="jumpTo('/clean')">清洗设备管理</a></li>
+                          <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'report'}" @click.prevent="jumpTo('/report')">报表管理</a></li>
                           <li><a :class="{'menu-top-active': $route.path.split('/')[1] === 'profile'}" @click.prevent="jumpTo('/profile')" v-on:click="">个人信息</a></li>
                       </ul>
                   </div>
