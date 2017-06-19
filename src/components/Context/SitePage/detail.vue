@@ -374,7 +374,7 @@ export default {
   .pic_wrap{      
       display: flex;
       justify-content: center;
-      background: #ffffff;
+      background: #F9F9F9;
   }
   .pic_wrap_body{ 
      width: 100%;
