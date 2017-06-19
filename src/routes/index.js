@@ -27,7 +27,7 @@ const routes = [
 		children: [
 			{
 				path: 'detail/:id',
-				component: resolve => require(['components/Context/NodePage/detail'],resolve)
+				component: resolve => require(['components/Context/DNSPage/detail'],resolve)
 			}			
 		]
 	},
