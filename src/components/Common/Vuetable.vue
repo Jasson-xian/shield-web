@@ -49,7 +49,8 @@
 export default {
 	data: function() {
 		return {
-			selectedItems: []
+			selectedItems: [],
+			optionVal:''
 		}
 	},
 	props: {

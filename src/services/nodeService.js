@@ -4,29 +4,57 @@ import xhr from './xhr/'
  * 对应后端涉及到用户认证的 API
  */
 class NodeService {
-
-  searchList (filter) {
-    return xhr({ 
-    		url: '/nodelist',
-    		method: 'POST',
-    		body: filter,
-    		other: {contentType: 'application/json; charset=utf-8'}
-    	})
-  }
-	getList(filter){
+	getList(page){
 		 return xhr({ 
-    		url: 'admin/domain_list',
-				method: 'POST',
-				body: {
-					page:filter.page,
-					filter:filter.filter
-				}
+    		url: 'admin/node_list',
+			method: 'POST',
+			body: {
+				page:page,
+				oper:'get'
+			}
     	})
 	}
-	detail (nodeid) {
-		return xhr({url:'/nodeinfo?nodeid=' + nodeid})
+
+	getSafegroup(){
+		 return xhr({ 
+    		url: 'admin/get_safety_list',
+			method: 'POST'
+    	})
+	}
+    
+	setGroup(id,group){
+        return xhr({ 
+    		url: 'admin/node_list',
+			method: 'POST',
+			body: {
+				id:id,
+				group:group,
+				oper:'set'
+			}
+    	})
 	}
 
+	nodeInfo(nodeid) {
+		return xhr({
+			url:'admin/node_list',
+			method: 'POST',
+			body: {
+				id:nodeid,
+				oper:'get_nm'
+			}
+	    })
+	}
+
+	congInfo(groupid){
+		return xhr({
+			url:'admin/group_list',
+			method: 'POST',
+			body: {
+				id:groupid,
+				oper:'get_nm'
+			}
+	    })
+	}
 }
 
 // 实例化后再导出

@@ -30,11 +30,20 @@ const routes = [
 				component: resolve => require(['components/Context/DNSPage/detail'],resolve)
 			}			
 		]
-	},
-	
+	},	
 	{
 		path: '/node', 
-		component: resolve => require(['components/Context/Node/'], resolve)
+		component: resolve => require(['components/Context/NodePage/'], resolve),
+		children: [
+			{
+				path: 'detail_list/:id',
+				component: resolve => require(['components/Context/NodePage/detail_list'],resolve)
+			},
+			{
+				path: 'detail_cong/:id',
+				component: resolve => require(['components/Context/NodePage/detail_cong'],resolve)
+			}				
+		]
 	},
 	{
 		path: '/clean', 

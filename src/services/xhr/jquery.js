@@ -5,7 +5,7 @@ const xhr = ({ url, body = null, method = 'get', other = {} }) => {
 
   $.ajax({
     type: method,
-    url: rootPath + url+'?debug=true',
+    url: rootPath + url,
     data: body,
     ...other
     // xhrFields: { // 跨域允许带上 cookie

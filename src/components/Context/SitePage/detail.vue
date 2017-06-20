@@ -1,5 +1,4 @@
 <template>
-    
     <div class="pic_wrap table detail">
         <table class="table">
         <thead>
@@ -104,7 +103,7 @@
             </li>
             <!--历史攻击拦截-->
             <li>
-                    <div class="pic_head">
+                <div class="pic_head">
                     <h4>历史攻击拦截</h4>
                     <div class="block">
                         <el-date-picker
